@@ -13,10 +13,10 @@ const NavBar = () => {
             </div>
 
             <nav className={`nav-links ${menuOpen ? 'active' : ''}`}>
-                <a href="#inicio">Inicio</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#nosotros">Nosotros</a>
-                <a href="#contacto">Contacto</a>
+                <a href="inicio">Inicio</a>
+                <a href="servicios">Servicios</a>
+                <a href="nosotros">Nosotros</a>
+                <a href="contacto">Contacto</a>
             </nav>
 
             <div className="menu-icon" onClick={toggleMenu}>
