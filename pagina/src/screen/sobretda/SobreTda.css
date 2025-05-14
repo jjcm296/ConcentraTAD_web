@@ -1,0 +1,170 @@
+:root {
+    --color-background: #56b448;
+    --color-text-tda: #333333;
+    --color-heading: #111111;
+    --color-card-bg: #ffffff;
+    --color-card-text: #333;
+    --color-card-border: #dddddd;
+}
+
+.sobre-tda-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 2rem;
+    background-color: var(--color-background);
+    gap: 2rem;
+}
+
+.texto-container {
+    flex: 1;
+    max-width: 500px;
+    padding: 2rem;
+    text-align: left;
+    color: var(--color-text-tda);
+}
+
+.texto-container h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--color-heading);
+}
+
+.texto-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.imagen-container {
+    display: flex;
+}
+
+.imagen-container img {
+    max-height: 500px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* <- esto hace que la imagen se recorte sin deformarse */
+    object-position: center;
+}
+
+.dificultades-section {
+    padding: 4rem 2rem;
+    background-color: #f0f8ff;
+    text-align: center;
+}
+
+.dificultades-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--color-heading);
+}
+
+.dificultades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.dificultad-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.dificultad-card:hover {
+    transform: scale(1.03);
+}
+
+.dificultad-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.criterios-section {
+    padding: 3rem 2rem;
+    background-color: var(--color-background);
+    position: relative;
+}
+
+.criterios-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-heading);
+    text-align: center;
+}
+
+.criterios-descripcion {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    color: var(--color-text-tda);
+    text-align: center;
+    line-height: 1.5;
+}
+
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    scroll-behavior: smooth;
+    max-width: 100%;
+}
+
+.criterio-card {
+    min-width: 300px;
+    max-width: 300px;
+    height: 200px;
+    flex: 0 0 auto;
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-card-border);
+    border-radius: 16px;
+    padding: 1rem;
+    scroll-snap-align: start;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: var(--color-card-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    color: #444;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn.left {
+    left: 10px;
+}
+
+.carousel-btn.right {
+    right: 10px;
+}
