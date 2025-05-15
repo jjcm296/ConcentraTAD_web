@@ -4,6 +4,7 @@ import NavBar from "./NavBar/NavBar";
 import Nosotros from "./screen/nosotros/Nosotros";
 import Inicio from "./screen/inicio/Inicio";
 import SobreTda from "./screen/sobretda/SobreTda"
+import Footer from "./Footer/Footer";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/sobretda" element={<SobreTda />} />
                 {/* Puedes agregar otras rutas aquí, como inicio, servicios, etc. */}
             </Routes>
+            <Footer />
         </div>
     );
 }

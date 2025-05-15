@@ -12,7 +12,7 @@ const Inicio = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const bgImage = isMobile ? '/bg_ph.png' : '/bg_pc2.png';
+    const bgImage = isMobile ? '/bg_ph_0.png' : '/bg_pc2.png';
 
     return (
         <>
@@ -33,7 +33,7 @@ const Inicio = () => {
             <section className="info-section">
                 <div className="info-container">
                     <div className="info-image">
-                        <img src="" alt="Ilustración de la app"/>
+                        <img src="/gameplay.gif" alt="Ilustración de la app"/>
                     </div>
                     <div className="info-text">
                         <h2>¿Qué es Concentra TDA?</h2>
@@ -51,12 +51,12 @@ const Inicio = () => {
             <section className="features-section" style={{backgroundImage: "url('/bg_benefits.png')"}}>
                 <h2 className="features-title">Cómo ayudamos a niños con TDA</h2>
                 <p className="features-subtitle">
-                    Concentra TDA combina educación y diversión con estas funciones:
+                    Combinamos educación y diversión con estas funciones:
                 </p>
                 <div className="features-grid">
 
                     <div className="feature-card">
-                        <img src="/flashcard_icon.png" alt="Flashcard" className="feature-icon"/>
+                        <img src="/icons/flashcard.svg" alt="Flashcard" className="feature-icon"/>
                         <div className="feature-content">
                             <h3>Flashcards con repetición espaciada</h3>
                             <p>Las tarjetas se adaptan al ritmo del niño: si una se le dificulta, volverá a aparecer
@@ -67,7 +67,7 @@ const Inicio = () => {
                     </div>
 
                     <div className="feature-card">
-                        <img src="/minigame_icon.png" alt="Minijuego" className="feature-icon"/>
+                        <img src="/icons/game.svg" alt="Minijuego" className="feature-icon"/>
                         <div className="feature-content">
                             <h3>Minijuego</h3>
                             <p>Después de cada sesión de estudio, el niño desbloquea un minijuego para reforzar lo
@@ -78,7 +78,7 @@ const Inicio = () => {
                     </div>
 
                     <div className="feature-card">
-                        <img src="/reward_icon.png" alt="Recompensas" className="feature-icon"/>
+                        <img src="/icons/reward.svg" alt="Recompensas" className="feature-icon"/>
                         <div className="feature-content">
                             <h3>Sistema de recompensas</h3>
                             <p>Los niños ganan monedas que pueden canjear por recompensas definidas por el tutor, como
@@ -88,7 +88,7 @@ const Inicio = () => {
                     </div>
 
                     <div className="feature-card">
-                        <img src="/profile_icon.png" alt="Perfiles" className="feature-icon"/>
+                        <img src="/icons/profile.svg" alt="Perfiles" className="feature-icon"/>
                         <div className="feature-content">
                             <h3>Perfiles separados</h3>
                             <p>El tutor configura y controla; el niño aprende y juega. El cambio entre perfiles es

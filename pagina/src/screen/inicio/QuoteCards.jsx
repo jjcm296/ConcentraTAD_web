@@ -9,11 +9,11 @@ const QuoteCards = () => {
 
     const cards = [
         {
-            front: "“Mi hijo se distrae todo el tiempo en clase”\n“No logra concentrarse ni cinco minutos”",
+            front: "❛❛ Mi hijo se distrae todo el tiempo en clase ❜❜\n❛❛ No logra concentrarse ni cinco minutos ❜❜",
             back: "¡No hay problema! ConcentraTDA ofrece sesiones breves, adaptadas al ritmo real de tu hijo. Puede estudiar sin presión, en casa, cuando mejor le funcione."
         },
         {
-            front: "“Mi hijo ya no quiere estudiar”\n“Nada lo motiva a aprender”",
+            front: "❛❛ Mi hijo ya no quiere estudiar ❜❜\n❛❛ Nada lo motiva a aprender ❜❜",
             back: "Transformamos el estudio en un reto emocionante. Cada logro se celebra, cada avance se premia. Aprender ya no es aburrido."
         }
     ];
@@ -32,7 +32,15 @@ const QuoteCards = () => {
                     >
                         <div className="card-inner">
                             <div className="card-front">
-                                <p>{card.front}</p>
+                                <p>
+                                    {card.front.split('\n').map((line, i) => (
+                                        <React.Fragment key={i}>
+                                            {line}
+                                            <br/>
+                                        </React.Fragment>
+                                    ))}
+                                </p>
+
                                 <span className="hint">Toca para ver solución</span>
                             </div>
                             <div className="card-back">

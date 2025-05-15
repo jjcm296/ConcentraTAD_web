@@ -1,10 +1,13 @@
 :root {
-    --color-background: #56b448;
+    --color-background1: #f77328;
     --color-text-tda: #333333;
     --color-heading: #111111;
     --color-card-bg: #ffffff;
     --color-card-text: #333;
     --color-card-border: #dddddd;
+    --criterio-azul:#2faaf6;
+    --criterio-verde: #56b448;
+    --criterio-amarillo: #f6ce4b;
 }
 
 .sobre-tda-section {
@@ -13,7 +16,6 @@
     justify-content: center;
     height: 100vh;
     padding: 2rem;
-    background-color: var(--color-background);
     gap: 2rem;
 }
 
@@ -50,13 +52,13 @@
 
 .dificultades-section {
     padding: 4rem 2rem;
-    background-color: #f0f8ff;
+    background-color: #f77328;
     text-align: center;
 }
 
 .dificultades-title {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3.5rem;
     color: var(--color-heading);
 }
 
@@ -84,12 +86,23 @@
 .dificultad-icon {
     width: 60px;
     height: 60px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.1rem;
 }
+
+.dificultades-referencias {
+    margin-top: 5rem;
+    font-size: 0.75rem;
+    color: #222;
+    max-width: 800px;
+    margin-inline: auto;
+    text-align: left;
+    line-height: 1.6;
+}
+
+
 
 .criterios-section {
     padding: 3rem 2rem;
-    background-color: var(--color-background);
     position: relative;
 }
 
@@ -167,4 +180,28 @@
 
 .carousel-btn.right {
     right: 10px;
+}
+
+.criterios-referencias {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .sobre-tda-section {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+
+    .texto-container {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .imagen-container {
+        justify-content: center;
+    }
+
+
 }

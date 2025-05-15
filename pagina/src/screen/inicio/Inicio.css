@@ -4,6 +4,11 @@
     --color-text: #2f5c98;
     --color-paragraph: #444;
     --color-white: white;
+    --color-card-front:#f77328;
+    --color-card-back: #2faaf6;
+    --color-text-alt: black;
+    --color-background-cards: #56b448;
+    --color-shadow: rgba(0, 0, 0, 0.4);
 }
 
 .hero-section {
@@ -16,6 +21,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     color: var(--color-white);
+    margin-bottom: 5rem;
 }
 
 
@@ -75,9 +81,10 @@
 
 .info-section {
     background-color: var(--color-primary-light);
-    padding: 4rem 2rem;
+    padding: 0 2rem;
     display: flex;
     justify-content: center;
+    margin-bottom: 7rem;
 }
 
 .info-container {
@@ -123,45 +130,53 @@
     background-repeat: no-repeat;
     background-size: 100% auto; /* ✅ que se escale solo horizontalmente */
     background-position: top center;
+
+    display: flex;
+    justify-content: center;
+
+    flex-direction: column;
+    align-items: center;
 }
 
 .features-title {
     font-size: 2.5rem;
-    color: var(--color-text);
+    color: var(--color-text-alt);
     margin-bottom: 0.5rem;
 }
 
 .features-subtitle {
     font-size: 1.1rem;
     color: var(--color-paragraph);
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 5rem;
+    grid-template-columns: repeat(2, 1fr); /* PC: 2 columnas */
+    gap: 2rem;
+    width: 100%;
     max-width: 800px;
-    margin: 0 auto;
+    justify-items: center;
+    margin-bottom: 7rem;
 }
 
 .feature-card {
     background-color: var(--color-white);
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: row;      /* horizontal layout */
-    align-items: flex-start;
-    gap: 1rem;
-    width: 400px;
-    box-sizing: border-box;
-    text-align: left;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    min-height: 250px;
 }
 
 .feature-icon {
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
     flex-shrink: 0;
     margin-top: 0.3rem; /* opcional: ajusta alineación */
@@ -169,11 +184,15 @@
 
 .feature-content {
     display: flex;
+    width: 250px;
     flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .feature-card h3 {
-    color: var(--color-text);
+    color: var(--color-text-alt);
     font-size: 1.2rem;
     margin: 0 0 0.5rem 0;
 }
@@ -189,13 +208,14 @@
     text-align: center;
     background-color: #f9f9f9;
     padding: 4rem 2rem;
+    margin-bottom: 7rem;
 }
 
 .quote-title {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
-    color: #0a004e;
-    margin-bottom: 0.5rem;
+    color: var(--color-text-alt);
+    margin-bottom: 1.5rem;
 }
 
 
@@ -204,6 +224,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
+    margin-top: 4rem;
 }
 
 .quote-card {
@@ -234,20 +255,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem;
+    padding: 1.2rem;
     font-size: 1rem;
-    color: #000;
+    color: var(--color-primary-light);
     backface-visibility: hidden;
     text-align: center;
     flex-direction: column;
 }
 
 .card-front {
-    background-color: #B2F2BB;
+    background-color: var(--color-card-front);
+}
+
+.card-front p {
+    font-weight: bold;
+    line-height: 2;
+    font-size: 1.2rem;
 }
 
 .card-back {
-    background-color: #A0C4FF;
+    background-color: var(--color-card-back);
     transform: rotateY(180deg);
 }
 
@@ -266,6 +293,7 @@
         padding: 100px 1rem 2rem; /* más espacio arriba si necesitas */
         background-size: contain;
         background-repeat: no-repeat;
+        margin-bottom: 1rem;
     }
 
     .hero-text h1 {
@@ -286,8 +314,22 @@
         padding-left: 0;
     }
 
+    .features-grid {
+        grid-template-columns: 1fr; /* solo una columna */
+        justify-items: center;
+        width: 100%/* centra las cards en la grid */
+    }
+
+    .features-subtitle {
+        color: var(--color-text-alt);
+    }
+
     .hero-text {
         margin-left: 0;
+    }
+
+    .info-section {
+        margin-top: -3rem;
     }
 
     .info-container {
@@ -297,6 +339,11 @@
 
     .info-text h2 {
         font-size: 1.8rem;
+        color: var(--color-text-alt);
+    }
+
+    .feature-card {
+        box-shadow: 0 4px 8px var(--color-shadow); /* Más intensa y difusa */
     }
 }
 

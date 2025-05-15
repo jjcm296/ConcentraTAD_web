@@ -40,8 +40,8 @@ const SobreTda = () => {
                         (TDAH), el TDA se distingue por la ausencia marcada de hiperactividad e impulsividad,
                         enfocándose exclusivamente en las dificultades atencionales.
                         <br/><br/>
-                        <em>(González-Castro, P., Rodríguez, C., & Cueli, M. (2016). Impacto del TDAH inatento en el
-                            rendimiento escolar. Revista Iberoamericana de Diagnóstico y Evaluación Psicológica)</em>
+                        <em>(González-Castro, P., Rodríguez, C., & Cueli, M. (2016).<strong>Impacto del TDAH inatento en el
+                            rendimiento escolar</strong>. Revista Iberoamericana de Diagnóstico y Evaluación Psicológica)</em>
                     </p>
                 </div>
                 <div className="imagen-container">
@@ -67,11 +67,19 @@ const SobreTda = () => {
                         "Impacto negativo en vínculos afectivos estables."
                     ].map((item, index) => (
                         <div key={index} className="dificultad-card">
-                            <img src={`/icons/icon${(index % 6) + 1}.png`} alt="" className="dificultad-icon"/>
+                            <img src={`/icons/difficulties/${index + 1}.svg`} alt="" className="dificultad-icon"/>
                             <p>{item}</p>
                         </div>
                     ))}
                 </div>
+                <div className="dificultades-referencias">
+                    <p><em>Barkley, R. A. (2015). <strong>Attention-deficit hyperactivity disorder: A handbook for diagnosis
+                        and treatment</strong> (4th ed.). Guilford Press.</em></p>
+                    <p><em>González-Castro, P., Rodríguez, C., & Cueli, M. (2016). <strong>Impacto del TDAH inatento en el
+                        rendimiento escolar</strong>. Revista Iberoamericana de Diagnóstico y Evaluación Psicológica.</em>
+                    </p>
+                </div>
+
             </section>
 
             <section className="criterios-section">
@@ -87,14 +95,32 @@ const SobreTda = () => {
                     <button className="carousel-btn left" onClick={() => handleScroll('left')}>&lt;</button>
 
                     <div className="carousel-container" ref={carouselRef}>
-                        {criterios.map((criterio, index) => (
-                            <div key={index} className="criterio-card">
-                                <p>{criterio}</p>
-                            </div>
-                        ))}
+                        {criterios.map((criterio, index) => {
+                            // Asignar color según la posición
+                            const bgColors = ['var(--criterio-azul)', 'var(--criterio-verde)', 'var(--criterio-amarillo)'];
+                            const backgroundColor = bgColors[index % 3];
+
+                            return (
+                                <div
+                                    key={index}
+                                    className="criterio-card"
+                                    style={{backgroundColor}}
+                                >
+                                    <p>{criterio}</p>
+                                </div>
+                            );
+                        })}
                     </div>
 
+
                     <button className="carousel-btn right" onClick={() => handleScroll('right')}>&gt;</button>
+                </div>
+
+                <div className="criterios-referencias">
+                    <p>
+                        <em>American Psychiatric Association. (2014). <strong>Manual diagnóstico y estadístico de los
+                            trastornos mentales</strong> (5.ª ed.). Arlington, VA: American Psychiatric Publishing.</em>
+                    </p>
                 </div>
             </section>
 
