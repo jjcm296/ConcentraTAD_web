@@ -8,6 +8,7 @@
 }
 
 .footer {
+    margin-top: 20px    ;
     background-color: var(--footer-bg);
     color: var(--footer-text);
     text-align: center;

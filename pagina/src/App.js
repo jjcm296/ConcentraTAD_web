@@ -4,6 +4,7 @@ import Inicio from './screen/inicio/Inicio';
 import SobreTDA from './screen/sobretda/SobreTda';
 import Nosotros from './screen/nosotros/Nosotros';
 import NavBar from './NavBar/NavBar';
+import Footer from "./Footer/Footer";
 
 function App() {
     const [scrollToDownload, setScrollToDownload] = useState(false);
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/sobretda" element={<SobreTDA />} />
                 <Route path="/nosotros" element={<Nosotros />} />
             </Routes>
+            <Footer/>
         </>
     );
 }
