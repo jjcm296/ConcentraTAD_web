@@ -293,6 +293,11 @@
         padding: 100px 1rem 6rem; /* más espacio abajo para el botón */
     }
 
+    .features-grid {
+        grid-template-columns: 1fr; /* ✅ Solo una columna en móviles */
+        gap: 1.5rem;
+    }
+
     .download-counter-container {
         margin-top: 1.5rem;
     }
@@ -331,6 +336,19 @@
 
     .feature-card {
         box-shadow: 0 4px 8px var(--color-shadow); /* Más intensa y difusa */
+    }
+    /* 🔽 AGREGAR ESTO 🔽 */
+    .feature-card {
+        flex-direction: column; /* apila ícono y texto */
+        padding: 1.5rem 1rem;
+    }
+
+    .feature-icon {
+        margin-bottom: 1rem; /* separa ícono del texto */
+    }
+
+    .feature-content {
+        width: 100%; /* opcional: que use todo el ancho disponible */
     }
 }
 
