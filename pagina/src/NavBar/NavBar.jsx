@@ -1,17 +1,29 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './NavBar.css';
 
-const NavBar = () => {
+const NavBar = ({ onDownloadClick }) => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const location = useLocation();
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
+
+    const handleDownloadClick = (e) => {
+        if (location.pathname !== '/') {
+            e.preventDefault(); // evita que se descargue hasta estar en home
+            localStorage.setItem('scrollToDownload', 'true');
+            window.location.href = '/';
+        } else {
+            onDownloadClick(); // cuenta clic
+            // la descarga continúa normalmente
+        }
+    };
 
     return (
         <header className="nav-bar">
             <div className="nav-left">
                 <Link to="/">
-                    <img src="/Logo.png" alt="Logo ConcentraTDA" className="logo"/>
+                    <img src="/Logo.png" alt="Logo ConcentraTDA" className="logo" />
                 </Link>
             </div>
 
@@ -19,7 +31,15 @@ const NavBar = () => {
                 <Link to="/">Inicio</Link>
                 <Link to="/sobretda">Sobre El TDA</Link>
                 <Link to="/nosotros">Nosotros</Link>
-                <button>Descargar</button>
+                <a
+                    href="/apk/ConcentraTDA.apk"
+                    download
+                    onClick={handleDownloadClick}
+                >
+                    <button className="clean-download-button">
+                        📥 Descargar
+                    </button>
+                </a>
             </nav>
 
             <div className="menu-icon" onClick={toggleMenu}>

@@ -44,6 +44,8 @@
 .nav-links {
     display: flex;
     gap: 70px;
+    align-items: center;
+
 }
 
 .nav-links a {
@@ -98,6 +100,7 @@
 .logo {
     height: 85px;
     object-fit: contain;
+    margin-top: 20px;
 }
 
 .nav-links button {

@@ -1,23 +1,38 @@
-import './App.css';
-import { Routes, Route } from "react-router-dom";
-import NavBar from "./NavBar/NavBar";
-import Nosotros from "./screen/nosotros/Nosotros";
-import Inicio from "./screen/inicio/Inicio";
-import SobreTda from "./screen/sobretda/SobreTda"
-import Footer from "./Footer/Footer";
+import React, { useState, useRef } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Inicio from './screen/inicio/Inicio';
+import SobreTDA from './screen/sobretda/SobreTda';
+import Nosotros from './screen/nosotros/Nosotros';
+import NavBar from './NavBar/NavBar';
 
 function App() {
+    const [scrollToDownload, setScrollToDownload] = useState(false);
+    const downloadCounterRef = useRef(null);
+
+    const triggerScrollToDownload = () => {
+        setScrollToDownload(true);
+        setTimeout(() => setScrollToDownload(false), 1000);
+    };
+
+    const handleDownloadClick = () => {
+        triggerScrollToDownload();
+        if (downloadCounterRef.current) {
+            downloadCounterRef.current.increment();
+        }
+    };
+
     return (
-        <div>
-            <NavBar />
+        <>
+            <NavBar onDownloadClick={handleDownloadClick} />
             <Routes>
-                <Route path="/" element={<Inicio />} />
+                <Route
+                    path="/"
+                    element={<Inicio counterRef={downloadCounterRef} />}
+                />
+                <Route path="/sobretda" element={<SobreTDA />} />
                 <Route path="/nosotros" element={<Nosotros />} />
-                <Route path="/sobretda" element={<SobreTda />} />
-                {/* Puedes agregar otras rutas aquí, como inicio, servicios, etc. */}
             </Routes>
-            <Footer />
-        </div>
+        </>
     );
 }
 
