@@ -6,6 +6,9 @@ import Nosotros from './screen/nosotros/Nosotros';
 import NavBar from './NavBar/NavBar';
 import Footer from "./Footer/Footer";
 
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
+
 function App() {
     const [scrollToDownload, setScrollToDownload] = useState(false);
     const downloadCounterRef = useRef(null);

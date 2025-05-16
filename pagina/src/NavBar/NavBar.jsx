@@ -37,7 +37,8 @@ const NavBar = ({ onDownloadClick }) => {
                     onClick={handleDownloadClick}
                 >
                     <button className="clean-download-button">
-                        📥 Descargar
+                        <i className="fab fa-android" style={{marginRight: '8px'}}></i>
+                        Descargar
                     </button>
                 </a>
             </nav>

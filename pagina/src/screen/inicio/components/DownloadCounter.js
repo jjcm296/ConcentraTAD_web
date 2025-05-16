@@ -18,16 +18,14 @@ const DownloadCounter = forwardRef((props, ref) => {
 
     return (
         <div className="clean-counter-container">
-            <div className={`clean-counter-number ${animate ? 'bounce' : ''}`}>
-                {count}
-            </div>
             <a
                 href="/apk/ConcentraTDA.apk"
                 download
                 onClick={increment}
             >
                 <button className="clean-download-button">
-                    📥 Descargar
+                    <i className="fab fa-android" style={{marginRight: '8px'}}></i>
+                    Descargar
                 </button>
             </a>
         </div>
