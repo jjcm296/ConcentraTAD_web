@@ -14,7 +14,6 @@ const Footer = () => {
             </div>
 
             <hr />
-
             <div className="footer-bottom">
                 <p>© 2025 Concentra TDA &nbsp; | &nbsp; <a href="#">Términos de uso</a> &nbsp; | &nbsp; <a href="#">Política de privacidad</a></p>
             </div>
