@@ -287,45 +287,32 @@
 
 
 @media (max-width: 768px) {
-
     .hero-section {
         background-position: center top;
-        padding: 100px 1rem 2rem; /* más espacio arriba si necesitas */
-        background-size: contain;
-        background-repeat: no-repeat;
-        margin-bottom: 1rem;
+        background-size: 120%;
+        padding: 100px 1rem 6rem; /* más espacio abajo para el botón */
     }
 
-    .hero-text h1 {
-        font-size: 2.2rem;
+    .download-counter-container {
+        margin-top: 1.5rem;
     }
 
-    .hero-button {
-        font-size: 0.9rem;
-        padding: 0.6rem 2rem;
+    .clean-download-button {
+        font-size: 1rem;
+        padding: 0.75rem 2rem;
+        margin-top: 0.5rem;
     }
 
     .hero-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding-top: 1.5rem;
-        gap: 2rem;
-        padding-left: 0;
+        gap: 1rem;
     }
 
-    .features-grid {
-        grid-template-columns: 1fr; /* solo una columna */
-        justify-items: center;
-        width: 100%/* centra las cards en la grid */
+    .hero-text h1 {
+        font-size: 2rem;
     }
 
-    .features-subtitle {
-        color: var(--color-text-alt);
-    }
-
-    .hero-text {
-        margin-left: 0;
+    .hero-text p {
+        font-size: 1rem;
     }
 
     .info-section {
