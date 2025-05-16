@@ -19,6 +19,11 @@ const NavBar = ({ onDownloadClick }) => {
         }
     };
 
+    const handleLinkClick = () => {
+        setMenuOpen(false);
+    };
+
+
     return (
         <header className="nav-bar">
             <div className="nav-left">
@@ -28,16 +33,19 @@ const NavBar = ({ onDownloadClick }) => {
             </div>
 
             <nav className={`nav-links ${menuOpen ? 'active' : ''}`}>
-                <Link to="/">Inicio</Link>
-                <Link to="/sobretda">Sobre El TDA</Link>
-                <Link to="/nosotros">Nosotros</Link>
+                <Link to="/" onClick={handleLinkClick}>Inicio</Link>
+                <Link to="/sobretda" onClick={handleLinkClick}>Sobre El TDA</Link>
+                <Link to="/nosotros" onClick={handleLinkClick}>Nosotros</Link>
                 <a
                     href="/apk/ConcentraTDA.apk"
                     download
-                    onClick={handleDownloadClick}
+                    onClick={(e) => {
+                        handleDownloadClick(e);
+                        handleLinkClick();
+                    }}
                 >
                     <button className="clean-download-button">
-                        <i className="fab fa-android" style={{marginRight: '8px'}}></i>
+                        <i className="fab fa-android" style={{ marginRight: '8px' }}></i>
                         Descargar
                     </button>
                 </a>
