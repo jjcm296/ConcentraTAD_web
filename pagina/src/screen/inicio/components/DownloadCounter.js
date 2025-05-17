@@ -3,7 +3,7 @@ import React, { useState, useImperativeHandle, forwardRef } from 'react';
 import './DownloadCounter.css';
 
 const DownloadCounter = forwardRef((props, ref) => {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(276);
     const [animate, setAnimate] = useState(false);
 
     const increment = () => {
@@ -18,6 +18,9 @@ const DownloadCounter = forwardRef((props, ref) => {
 
     return (
         <div className="clean-counter-container">
+            <div className={`clean-counter-number ${animate ? 'bounce' : ''}`}>
+                {count}
+            </div>
             <a
                 href="/apk/ConcentraTDA.apk"
                 download
