@@ -3,7 +3,7 @@ import React, { useState, useImperativeHandle, forwardRef } from 'react';
 import './DownloadCounter.css';
 
 const DownloadCounter = forwardRef((props, ref) => {
-    const [count, setCount] = useState(276);
+    const [count, setCount] = useState(167);
     const [animate, setAnimate] = useState(false);
 
     const increment = () => {
